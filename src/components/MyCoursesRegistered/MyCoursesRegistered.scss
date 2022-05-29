@@ -1,0 +1,153 @@
+@import "../connect";
+.food-card-registered-course {
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: -30px 70px 150px -20px rgba(51, 51, 51, 0.25);
+  transform-style: preserve-3d;
+  // position: absolute;
+  transition: transform 0.5s;
+  &:hover {
+    z-index: 5;
+    transform: rotate(5deg) rotateY(17deg);
+  }
+  &:hover &__control {
+    transform: translateX(-10%);
+    opacity: 1;
+  }
+
+  &__image {
+    position: relative;
+    height: 160px;
+
+    > img {
+      max-width: 100%;
+      border-bottom-right-radius: 30px;
+      transform: rotate(8deg) translate(-10px, -55px);
+      position: absolute;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__details {
+    display: grid;
+    grid-row-gap: 8px;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    padding: 8px 30px 20px;
+  }
+  &__control {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    transform: translateX(200%);
+    opacity: 0;
+    transition: linear 0.3s;
+    .remove-btn {
+      background: none;
+      // border: 1px solid $color-red-0;
+      border: none;
+      color: $color-red-0;
+      padding: spacing(1) spacing(1);
+      border-radius: 5px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  &__name {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 18px;
+    font-weight: bold;
+    color: #11313c;
+  }
+
+  &__price {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f7736e;
+    text-align: right;
+  }
+
+  &__desc {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 14px;
+    font-weight: 500;
+    color: #949a98;
+  }
+
+  &__rating {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+  }
+
+  &__star {
+    width: 16px;
+    height: 16px;
+    background-color: #dadada;
+    display: inline-block;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    &--gold {
+      background-color: #e6c356;
+    }
+  }
+}
+
+.search-container {
+  width: 490px;
+  display: block;
+  margin: 0 auto;
+  input#search-bar {
+    margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid #d0cfce;
+    outline: none;
+    &:focus {
+      border: 1px solid #008abf;
+      transition: 0.35s ease;
+      color: #008abf;
+      &::-webkit-input-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0;
+      }
+      &::-moz-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0;
+      }
+      &:-ms-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0;
+      }
+    }
+  }
+
+  .search-icon {
+    position: relative;
+    float: right;
+    width: 75px;
+    height: 75px;
+    top: -62px;
+    right: -45px;
+  }
+}

@@ -1,0 +1,82 @@
+@import "../connect";
+
+.banner {
+  background: linear-gradient(-45deg, $color-red-0 0%, $color-purple 100%);
+  color: $color-white-0;
+  .container {
+    .banner__grid {
+      .grid__item--2 {
+        justify-content: center;
+      }
+      .grid__item--3 {
+        justify-content: flex-end;
+        &:last-child {
+          padding-right: spacing(3);
+        }
+      }
+      .grid__item {
+        padding-top: spacing(1.5);
+        display: flex;
+        i {
+          font-size: $fs-5 + 5;
+          margin-right: spacing(1.6);
+          margin-top: spacing(0.5);
+        }
+        .grid__text {
+          b {
+            @include Text($fs-0 + 2, $fw-sbold);
+          }
+          p {
+            @include Text($fs-0, $fw-regular);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: getBreakpoint("small")) {
+  .banner {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  .banner {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: getBreakpoint("medium")) and (max-width: getBreakpoint("large")) {
+  .banner {
+    .container {
+      .banner__grid {
+        .grid__item--2 {
+          justify-content: center;
+        }
+        .grid__item--3 {
+          justify-content: flex-end;
+          &:last-child {
+            padding-right: spacing(3);
+          }
+        }
+        .grid__item {
+          padding-top: spacing(1.5);
+          display: flex;
+          i {
+            display: none;
+          }
+          .grid__text {
+            text-align: center;
+            b {
+              @include Text($fs-0 + 5, $fw-sbold);
+            }
+            p {
+              @include Text($fs-0 + 3, $fw-regular);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+@import "../connect";
+
+.comments {
+  padding-bottom: spacing(3);
+  .comments__container {
+    padding-top: spacing(3);
+    .comments__title {
+      @include Text($fs-3, $fw-bold);
+      padding-bottom: spacing(1);
+    }
+    .comments__carousel {
+      .myCommentsCarousel {
+        height: 100%;
+        position: relative;
+        &.owl-loaded {
+          display: block;
+        }
+        .owl-nav {
+          .owl-prev {
+            position: absolute;
+            outline: none;
+            top: 40%;
+            left: -2.5%;
+            width: 45px;
+            height: 45px;
+            line-height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include Text($fs-4 + 10, $fw-regular);
+            background-color: $color-white-0;
+            color: $color-blue;
+            box-shadow: 0 0 1px 1px $color-black-dark,
+              0 3px 1px 0 $color-black-dark;
+            transition: all 0.3s;
+            span {
+              padding-bottom: spacing(0.4);
+            }
+            &:hover {
+              box-shadow: 0 2px 8px 2px $color-black-dark-2;
+            }
+          }
+          .owl-next {
+            position: absolute;
+            outline: none;
+            top: 40%;
+            right: -2.5%;
+            width: 45px;
+            height: 45px;
+            line-height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include Text($fs-4 + 10, $fw-regular);
+            background-color: $color-white-0;
+            color: $color-blue;
+            box-shadow: 0 0 1px 1px $color-black-dark,
+              0 3px 1px 0 $color-black-dark;
+            transition: all 0.3s;
+            span {
+              padding-bottom: spacing(0.4);
+            }
+            &:hover {
+              box-shadow: 0 2px 8px 2px $color-black-dark-2;
+            }
+          }
+        }
+        .item {
+          padding: spacing(2.5);
+          background-color: $color-white-0;
+          user-select: text;
+          box-shadow: 0 1px 2px 1px $color-black-dark;
+          min-height: 320px;
+          border-radius: 3px;
+          margin-bottom: 10px;
+          .item__info {
+            display: flex;
+            align-items: center;
+            padding-bottom: spacing(2);
+            .item__img {
+              margin-right: spacing(1);
+              img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+              }
+              .non__img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: $color-black-light;
+                margin-right: spacing(2);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .alphabetName {
+                  @include Text($fs-3, $fw-bold);
+                  color: $color-white-cream;
+                }
+              }
+            }
+            .item__name {
+              @include Text($fs-2, $fw-regular);
+            }
+          }
+          .item__comment {
+            @include Text($fs-2, $fw-light);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: getBreakpoint("small")) {
+  .comments {
+    .comments__container {
+      padding: spacing(2) spacing(2);
+    }
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  .comments {
+    .comments__container {
+      padding: spacing(2) spacing(2);
+      .comments__carousel {
+        .myCommentsCarousel {
+          .owl-nav {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: getBreakpoint("medium")) and (max-width: getBreakpoint("large")) {
+  .comments {
+    .comments__container {
+      padding: spacing(2) spacing(2);
+      .comments__title {
+        @include Text($fs-3, $fw-bold);
+        padding-bottom: spacing(1);
+      }
+      .comments__carousel {
+        .myCommentsCarousel {
+          .owl-nav {
+            .owl-prev {
+              left: -3%;
+              width: 43px;
+              height: 43px;
+              line-height: 25px;
+              @include Text($fs-4 + 7, $fw-regular);
+            }
+            .owl-next {
+              right: -3%;
+              width: 43px;
+              height: 43px;
+              line-height: 25px;
+              @include Text($fs-4 + 7, $fw-regular);
+              span {
+                padding-bottom: spacing(0.4);
+              }
+              &:hover {
+                box-shadow: 0 2px 8px 2px $color-black-dark-2;
+              }
+            }
+          }
+          .item {
+            padding: spacing(3);
+            .item__info {
+              .item__img {
+                img {
+                  width: 70%;
+                }
+                .non__img {
+                  width: 70px;
+                  height: 70px;
+                }
+              }
+              .item__name {
+                @include Text($fs-2, $fw-regular);
+              }
+            }
+            .item__comment {
+              @include Text($fs-2 - 2, $fw-light);
+            }
+          }
+        }
+      }
+    }
+  }
+}

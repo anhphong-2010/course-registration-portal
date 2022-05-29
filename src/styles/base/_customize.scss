@@ -1,0 +1,17 @@
+@import "../helper/function";
+@import "../helper/mixin";
+@import "../helper/variables";
+
+
+
+.slick-slide {
+  padding: spacing(0.5);
+}
+
+.slick-arrow {
+  &::before {
+    color: $color-red-0;
+    width: 50px;
+    height: 50px;
+  }
+}

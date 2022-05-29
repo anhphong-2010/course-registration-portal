@@ -1,0 +1,189 @@
+@import "../connect";
+
+.studentViewing {
+  .studentViewing__container {
+    .studentViewing__title {
+      @include Text($fs-0 + 4, $fw-regular);
+      color: $color-black-light;
+      margin-bottom: spacing(2);
+    }
+    .studentViewing__carousel {
+      .myViewCarousel__link {
+        text-decoration: none;
+        &:hover .overlay {
+          opacity: 1;
+        }
+        .item {
+          .item--card {
+            border: 1px solid $color-gray-6;
+            box-shadow: 0 2px 2px 0 $color-black-dark;
+            margin-bottom: spacing(2);
+            transition: all 0.2s;
+            &:hover {
+              box-shadow: 1px 4px 5px 2px $color-black-dark;
+            }
+            &:hover .card--img > .overlay {
+              opacity: 1;
+            }
+            .card--img {
+              position: relative;
+              height: 160px;
+              .overlay {
+                position: absolute;
+                background-color: $color-black-dark-3;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                &:hover {
+                  opacity: 1;
+                }
+              }
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            .card--body {
+              padding: spacing(1.5);
+              .card--title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include Text($fs-0, $fw-bold);
+                margin-bottom: spacing(1);
+                color: $color-black-0;
+              }
+              .card--actor {
+                @include Text($fs-0 - 2, $fw-regular);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: $color-gray-4;
+              }
+              .card--star {
+                margin-bottom: spacing(1);
+                .fa.fa-star,
+                .fa.fa-star-half-alt {
+                  color: $color-yellow;
+                  @include Text($fs-1, $fw-bold);
+                }
+                .rating {
+                  color: $color-black-0;
+                  .rating__point {
+                    @include Text($fs-1, $fw-bold);
+                  }
+                  .rating__people {
+                    @include Text($fs-1, $fw-light);
+                  }
+                }
+              }
+              .card--price {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                color: $color-black-0;
+                .discount__price {
+                  margin-left: spacing(1);
+                  @include Text($fs-1 + 5, $fw-bold);
+                }
+                .original__price {
+                  @include Text($fs-1, $fw-regular);
+                }
+              }
+            }
+          }
+        }
+      }
+      #myViewCarousel {
+        position: relative;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: getBreakpoint("small")) {
+  .studentViewing {
+    .studentViewing__container {
+      padding: 0 spacing(1.5);
+      .studentViewing__carousel {
+        #myViewCarousel {
+          &.owl-loaded {
+            display: block;
+          }
+          .owl-nav {
+            .owl-prev {
+              left: -5%;
+            }
+            .owl-next {
+              right: -5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  .studentViewing {
+    .studentViewing__container {
+      padding: 0 spacing(1.5);
+      .studentViewing__carousel {
+        #myViewCarousel {
+          &.owl-loaded {
+            display: block;
+          }
+          .owl-nav {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: getBreakpoint("medium")) and (max-width: getBreakpoint("large")) {
+  .studentViewing {
+    .studentViewing__container {
+      padding: 0 spacing(3);
+      .studentViewing__carousel {
+        #myViewCarousel {
+          &.owl-loaded {
+            display: block;
+          }
+          .owl-nav {
+            .owl-prev {
+              left: -4%;
+            }
+            .owl-next {
+              right: -4%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1199px) {
+  .studentViewing {
+    .studentViewing__container {
+      padding: 0 spacing(3);
+      .studentViewing__carousel {
+        #myViewCarousel {
+          &.owl-loaded {
+            display: block;
+          }
+          .owl-nav {
+            .owl-prev {
+              left: -3%;
+            }
+            .owl-next {
+              right: -3%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

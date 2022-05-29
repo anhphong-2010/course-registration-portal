@@ -1,0 +1,12 @@
+@import "../connect";
+
+.checkCourseModal {
+  z-index: 9999;
+  .modal-dialog {
+    .modal-content {
+      margin: 0;
+      .modal-body {
+      }
+    }
+  }
+}

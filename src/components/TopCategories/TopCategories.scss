@@ -1,0 +1,87 @@
+@import "../connect";
+
+.topCategories {
+  padding: spacing(2.5) 0;
+  .topCategories__title {
+    @include Text($fs-3 + 5, $fw-bold);
+    margin-bottom: spacing(1);
+  }
+  .topCategories__content {
+    .content__above {
+      margin-bottom: spacing(2);
+      .content__above__link {
+        text-decoration: none;
+        color: $color-black-0;
+        .above__item {
+          padding: spacing(1);
+          display: flex;
+          align-items: center;
+          box-shadow: 0 0 1px 1px $color-black-dark,
+            0 3px 1px 0 $color-black-dark;
+          transition: all 0.2s;
+          &:hover {
+            box-shadow: 0 2px 8px 2px $color-black-dark-2;
+          }
+          .item__icon {
+            font-size: $fs-3;
+            padding-right: spacing(1.2);
+          }
+          .item__text {
+            @include Text($fs-2 - 2, $fw-light);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: getBreakpoint("small")) {
+  .topCategories {
+    padding: spacing(2.5) spacing(1.5);
+    .topCategories__content {
+      .content__above {
+        margin-bottom: 0;
+        .above__item {
+          margin-bottom: spacing(2);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  .topCategories {
+    padding: spacing(2.5) spacing(1.5);
+    .topCategories__content {
+      .content__above {
+        margin-bottom: 0;
+        .above__item {
+          margin-bottom: spacing(2);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: getBreakpoint("medium")) and (max-width: getBreakpoint("large")) {
+  .topCategories {
+    padding: spacing(2.5) spacing(2);
+    .topCategories__content {
+      display: flex;
+      justify-content: space-around;
+      .content__above {
+        min-width: 50%;
+        margin-bottom: 0;
+        .content__above__link {
+          min-width: 100%;
+          .above__item {
+            margin-bottom: spacing(2);
+          }
+        }
+      }
+    }
+  }
+}

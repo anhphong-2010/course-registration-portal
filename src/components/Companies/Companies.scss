@@ -1,0 +1,187 @@
+@import "../connect";
+
+.companies {
+  background-color: $color-gray-5;
+  .companies__container {
+    .companies__title {
+      @include Text($fs-0, $fw-light);
+      color: $color-gray-4;
+      text-align: center;
+    }
+    .companies__link {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      .companies__partner {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: spacing(3.2) 0;
+        .partner__item {
+          margin: 0 40px 8px;
+          img {
+            width: 100px;
+            height: 80px;
+          }
+        }
+      }
+    }
+    .companies__getUdemy {
+      display: flex;
+      padding-bottom: spacing(2.5);
+      .forEverybody {
+        width: 50%;
+        padding: spacing(3) spacing(12.1);
+        text-align: center;
+        border-right: 1px solid $color-gray-6;
+        .forEverybody__title {
+          text-decoration: none;
+          @include Text($fs-3, $fw-bold);
+          color: $color-black-0;
+        }
+        .forEverybody__description {
+          @include Text($fs-2 - 2, $fw-light);
+          padding-bottom: spacing(1);
+        }
+        .forEverybody__btn {
+          @include Text($fs-2 - 2, $fw-regular);
+          padding: spacing(1) spacing(1.2);
+          background-color: $color-red-0;
+          color: $color-white-cream;
+          border: none;
+          border-radius: 3px;
+          outline: none;
+          &:hover {
+            background-color: $color-red-1;
+          }
+          &:visited {
+            background-color: $color-red-2;
+          }
+        }
+      }
+      .forBusiness {
+        width: 50%;
+        padding: spacing(3) spacing(12.2);
+        text-align: center;
+        .forBusiness__title {
+          text-decoration: none;
+          @include Text($fs-3, $fw-bold);
+          color: $color-black-0;
+        }
+        .forBusiness__description {
+          @include Text($fs-2 - 2, $fw-light);
+          padding-bottom: spacing(1);
+        }
+        .forBusiness__btn {
+          @include Text($fs-2 - 2, $fw-regular);
+          padding: spacing(1) spacing(1.2);
+          background-color: $color-red-0;
+          color: $color-white-cream;
+          border: none;
+          border-radius: 3px;
+          outline: none;
+          &:hover {
+            background-color: $color-red-1;
+          }
+          &:visited {
+            background-color: $color-red-2;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: getBreakpoint("small")) {
+  .companies {
+    .companies__container {
+      .companies__link {
+        .companies__partner {
+          display: block;
+          text-align: center;
+          .partner__item {
+            margin-bottom: spacing(2.5);
+          }
+        }
+      }
+      .companies__getUdemy {
+        .forEverybody,
+        .forBusiness {
+          padding: spacing(3) spacing(2);
+          .forEverybody__title,
+          .forBusiness__title {
+            @include Text($fs-2 + 3, $fw-bold);
+            margin-bottom: spacing(3);
+          }
+          .forEverybody__description,
+          .forBusiness__description {
+            @include Text($fs-2 - 2, $fw-light);
+            padding-bottom: spacing(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  .companies {
+    .companies__container {
+      .companies__link {
+        .companies__partner {
+          display: block;
+          text-align: center;
+          .partner__item {
+            margin-bottom: spacing(2.5);
+          }
+        }
+      }
+      .companies__getUdemy {
+        .forEverybody,
+        .forBusiness {
+          padding: spacing(3) spacing(2);
+          .forEverybody__title,
+          .forBusiness__title {
+            @include Text($fs-2 + 3, $fw-bold);
+            margin-bottom: spacing(3);
+          }
+          .forEverybody__description,
+          .forBusiness__description {
+            @include Text($fs-2 - 2, $fw-light);
+            padding-bottom: spacing(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: getBreakpoint("medium")) and (max-width: getBreakpoint("large")) {
+  .companies {
+    .companies__container {
+      .companies__link {
+        .companies__partner {
+          .partner__item {
+            margin-bottom: spacing(2.5);
+          }
+        }
+      }
+      .companies__getUdemy {
+        .forEverybody,
+        .forBusiness {
+          padding: spacing(3) spacing(2);
+          .forEverybody__title,
+          .forBusiness__title {
+            @include Text($fs-2 + 3, $fw-bold);
+            margin-bottom: spacing(3);
+          }
+          .forEverybody__description,
+          .forBusiness__description {
+            @include Text($fs-2 - 2, $fw-light);
+            padding-bottom: spacing(1);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@import "../connect";
+
+.info-course {
+  background-color: #1e1e1c;
+  .course-content {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: spacing(3);
+    .course-left {
+      .course-tag {
+        .tag-link {
+          color: #8ed1dc;
+          text-decoration: none;
+          @include Text($fs-0, $fw-bold);
+        }
+        span {
+          color: #8ed1dc;
+        }
+      }
+      .course-title {
+        color: $color-white-0;
+        padding-right: spacing(10);
+      }
+      .course-description {
+        color: $color-white-0;
+        padding-right: spacing(10);
+        margin-bottom: spacing(1);
+      }
+      .course-star {
+        margin-bottom: spacing(1);
+        display: flex;
+        align-items: center;
+        .fa.fa-star,
+        .fa.fa-star-half-alt {
+          color: $color-yellow;
+          @include Text($fs-1, $fw-bold);
+        }
+        .rating {
+          color: $color-white-0;
+          margin-left: spacing(2);
+          .rating__point {
+            @include Text($fs-2, $fw-bold);
+          }
+          .rating__people {
+            @include Text($fs-2, $fw-light);
+            margin-right: spacing(2);
+          }
+        }
+      }
+      .course-author {
+        color: $color-white-0;
+        .author-link {
+          color: #8ed1dc;
+        }
+      }
+      .course-button {
+        .button-item {
+          cursor: pointer;
+          width: 100px;
+          height: 40px;
+          background: none;
+          border: 1px solid $color-white-0;
+          border-radius: 6px;
+          outline: none;
+          transition: all 0.2s;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+    .course-right {
+      box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px,
+        rgba(0, 0, 0, 0.08) 0px 4px 12px;
+      background: $color-white-0;
+      border-radius: 5px;
+      .course-right-content {
+        .img-form {
+          padding: spacing(0.1);
+          img {
+            width: 100%;
+            height: 230px;
+            border-radius: 5px;
+          }
+        }
+        .right-content-body {
+          .right-price {
+            @include Text($fs-4, $fw-bold);
+          }
+          .btn-register {
+            background-color: $color-red-0;
+            color: $color-white-0;
+            transition: all 0.2s;
+            &:hover {
+              background-color: $color-red-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: getBreakpoint("small")) {
+  .info-course {
+    .course-content {
+      .course-right {
+        .course-right-content {
+          .img-form {
+            img {
+              width: 100%;
+              height: 100px;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

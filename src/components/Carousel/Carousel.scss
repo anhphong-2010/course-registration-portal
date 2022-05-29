@@ -1,0 +1,193 @@
+@import "../connect";
+
+.udemyCarousel {
+  height: 500px;
+  background: url("https://img-c.udemycdn.com/notices/web_banner/slide_2_image_udlite/e6cc1a30-2dec-4dc5-b0f2-c5b656909d5b.jpg");
+  background-position: top;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  position: relative;
+  // &:hover .picking-course {
+  //   transform: translateX(-120%);
+  // }
+
+  .udemyCarousel__content {
+    width: 100%;
+    padding: 0 15px;
+    margin: 30px 50px;
+    color: $color-white-0;
+    .udemyCarousel__text {
+      width: 460px;
+      h1 {
+        @include Text($fs-4 + 1, $fw-bold);
+        margin-bottom: spacing(1);
+        color: #000;
+      }
+      p {
+        @include Text($fs-2 - 2, $fw-regular);
+        margin-bottom: spacing(2);
+        color: #000;
+      }
+      .formSearch {
+        .input-group {
+          height: 50px;
+          .form-control {
+            padding: 25px 17px;
+            box-shadow: none;
+            border: none;
+            &:focus {
+              border: none;
+            }
+            &::placeholder {
+              @include Text($fs-2, $fw-light);
+            }
+          }
+          .input-group-append {
+            .input-group-text {
+              padding-right: spacing(1.5);
+              padding-left: spacing(1.5);
+              background-color: $color-white-0;
+              border: 1px solid $color-white-0;
+              color: $color-red-0;
+              cursor: pointer;
+              &:hover {
+                background-color: $color-red-0;
+                border-top: 1px solid $color-red-0;
+                border-bottom: 1px solid $color-red-0;
+                color: $color-white-0;
+              }
+              i {
+                font-size: $fs-2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .picking-course {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    // transform: translateX(360px);
+    bottom: 0;
+    transition: 0.5s linear;
+  }
+}
+
+@media screen and (max-width: getBreakpoint("small")) {
+  .udemyCarousel {
+    height: 300px;
+    align-items: flex-end;
+    .udemyCarousel__content {
+      width: 100%;
+      padding: 0 15px;
+      margin: spacing(1) spacing(0.5);
+      color: $color-white-0;
+      .udemyCarousel__text {
+        width: 460px;
+        h1 {
+          @include Text($fs-3 + 1, $fw-bold);
+        }
+        p {
+          @include Text($fs-1 + 5, $fw-light);
+          padding-right: spacing(20);
+        }
+        .formSearch {
+          .input-group {
+            width: 75%;
+            .form-control {
+              padding: spacing(2) spacing(1);
+              &::placeholder {
+                @include Text($fs-1, $fw-light);
+              }
+            }
+            .input-group-append {
+              height: 40px;
+              .input-group-text {
+                i {
+                  font-size: $fs-1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  .udemyCarousel {
+    height: 300px;
+    align-items: flex-end;
+    .udemyCarousel__content {
+      width: 100%;
+      padding: 0 15px;
+      margin: spacing(1) spacing(0.5);
+      color: $color-white-0;
+      .udemyCarousel__text {
+        width: 460px;
+        h1 {
+          @include Text($fs-3 + 1, $fw-bold);
+        }
+        p {
+          @include Text($fs-1 + 5, $fw-light);
+          padding-right: spacing(20);
+        }
+        .formSearch {
+          .input-group {
+            width: 75%;
+            .form-control {
+              padding: spacing(2) spacing(1);
+              &::placeholder {
+                @include Text($fs-1, $fw-light);
+              }
+            }
+            .input-group-append {
+              height: 40px;
+              .input-group-text {
+                i {
+                  font-size: $fs-1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: getBreakpoint("medium")) and (max-width: getBreakpoint("large")) {
+  .udemyCarousel {
+    .udemyCarousel__content {
+      margin: spacing(1) spacing(0.5);
+      color: $color-white-0;
+      .udemyCarousel__text {
+        h1 {
+          @include Text($fs-4, $fw-bold);
+        }
+        p {
+          @include Text($fs-2, $fw-light);
+          padding-right: spacing(10);
+        }
+        .formSearch {
+          .input-group {
+            width: 70%;
+            .form-control {
+              padding: spacing(2.5) spacing(1);
+              &::placeholder {
+                @include Text($fs-3 - 3, $fw-light);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

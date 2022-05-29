@@ -1,0 +1,20 @@
+@import "../connect";
+
+.item-col {
+  border: 1px solid $color-gray-6;
+  box-shadow: 0 2px 2px 0 $color-black-dark;
+  margin-bottom: spacing(2);
+  transition: all 0.2s;
+  padding: spacing(1);
+  // max-width: 49%;
+  // margin-right: spacing(1);
+  &:hover {
+    box-shadow: 1px 4px 5px 2px $color-black-dark;
+  }
+  .border-tbl {
+    border-radius: 20px 0px 20px 0;
+  }
+  .border-tbr {
+    border-radius: 20px 0px 20px 0;
+  }
+}

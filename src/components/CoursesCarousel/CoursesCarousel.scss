@@ -1,0 +1,381 @@
+@import "../connect";
+
+.fade {
+  animation: fadeIn 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  &:not(.show) {
+    display: none;
+  }
+}
+.courses {
+  margin: spacing(2) 0;
+  .courses__container {
+    .row {
+      margin: 0;
+      .courses__left {
+        background: $color-gray-5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 spacing(3.2);
+      }
+      .courses__right {
+        width: 100%;
+        padding-right: 0;
+        margin: 0;
+        .right__content {
+          width: 100%;
+          #myTab {
+            flex-wrap: nowrap;
+            white-space: normal;
+            border-bottom: none;
+            margin-bottom: spacing(2);
+            .nav-item {
+              display: flex;
+              align-items: center;
+              border-bottom: 1px solid #dee2e6;
+              .nav-link {
+                text-align: left;
+                background-color: #fff;
+                color: $color-black-0;
+                border: none;
+                padding: spacing(0.4) spacing(0.8);
+                &.active {
+                  border-bottom: 6px solid $color-blue;
+                }
+                &:focus {
+                  outline: none;
+                }
+              }
+              .nav-link--btn {
+                padding: spacing(1.6) spacing(1);
+                &.active {
+                  padding-bottom: spacing(1.6);
+                }
+              }
+              .nav-link--btn2 {
+                &.active {
+                  padding-bottom: spacing(-0.1);
+                }
+              }
+            }
+          }
+          #myTabContent {
+            height: 300px;
+            .myCourseCarousel {
+              position: relative;
+              .myCourseCarousel__link {
+                text-decoration: none;
+                &:hover .overlay {
+                  opacity: 1;
+                }
+                .item {
+                  .item--card {
+                    border: 1px solid $color-gray-6;
+                    box-shadow: 0 2px 2px 0 $color-black-dark;
+                    margin-bottom: spacing(2);
+                    transition: all 0.2s;
+                    &:hover {
+                      box-shadow: 1px 4px 5px 2px $color-black-dark;
+                    }
+                    &:hover .card--img > .overlay {
+                      opacity: 1;
+                    }
+                    .card--img {
+                      position: relative;
+                      height: 160px;
+                      .overlay {
+                        position: absolute;
+                        background-color: $color-black-dark-3;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        &:hover {
+                          opacity: 1;
+                        }
+                      }
+                      img {
+                        width: 100%;
+                        height: 100%;
+                      }
+                    }
+                    .card--body {
+                      padding: spacing(1.5);
+                      .card--title {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        @include Text($fs-0, $fw-bold);
+                        margin-bottom: spacing(1);
+                        color: $color-black-0;
+                      }
+                      .card--actor {
+                        @include Text($fs-0 - 2, $fw-regular);
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        color: $color-gray-4;
+                      }
+                      .card--star {
+                        margin-bottom: spacing(1);
+                        .fa.fa-star,
+                        .fa.fa-star-half-alt {
+                          color: $color-yellow;
+                          @include Text($fs-1, $fw-bold);
+                        }
+                        .rating {
+                          color: $color-black-0;
+                          margin-left: 4px;
+                          .rating__point {
+                            @include Text($fs-1, $fw-bold);
+                          }
+                          .rating__people {
+                            @include Text($fs-1, $fw-light);
+                          }
+                        }
+                      }
+                      .card--price {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        align-items: center;
+                        color: $color-black-0;
+                        .discount__price {
+                          margin-left: spacing(1);
+                          @include Text($fs-1 + 5, $fw-bold);
+                        }
+                        .original__price {
+                          @include Text($fs-1, $fw-regular);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: getBreakpoint("small")) {
+  .courses {
+    .courses__container {
+      padding: 0 spacing(3);
+      .row {
+        .courses__left {
+          display: none;
+        }
+        .courses__right {
+          padding: 0;
+          .right__content {
+            #myTab {
+              width: 100%;
+              overflow-x: scroll;
+              &::-webkit-scrollbar {
+                height: 1px;
+              }
+              &::-webkit-scrollbar-thumb {
+                background-color: $color-gray-2;
+              }
+            }
+            #myTabContent {
+              .myCourseCarousel {
+                .owl-nav {
+                  &.disabled {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  .courses {
+    .courses__container {
+      padding: 0 spacing(3);
+      .row {
+        .courses__left {
+          display: none;
+        }
+        .courses__right {
+          padding: 0;
+          .right__content {
+            #myTab {
+              width: 100%;
+              overflow-x: scroll;
+              &::-webkit-scrollbar {
+                height: 1px;
+              }
+              &::-webkit-scrollbar-thumb {
+                background-color: $color-gray-2;
+              }
+            }
+            #myTabContent {
+              .myCourseCarousel {
+                .owl-nav {
+                  &.disabled {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: getBreakpoint("medium")) and (max-width: getBreakpoint("large")) {
+  .courses {
+    .courses__container {
+      padding: 0 spacing(3);
+      .row {
+        margin: 0 auto;
+        .courses__left {
+          display: none;
+        }
+        .courses__right {
+          padding: 0;
+          min-width: 100%;
+          .right__content {
+            #myTab {
+              max-width: 100%;
+              .nav-item {
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #dee2e6;
+                .nav-link {
+                  text-align: left;
+                  background-color: #fff;
+                  color: $color-black-0;
+                  border: none;
+                  padding: spacing(0.4) spacing(0.8);
+                  &.active {
+                    border-bottom: 6px solid $color-blue;
+                  }
+                  &:focus {
+                    outline: none;
+                  }
+                }
+                .nav-link--btn {
+                  padding: spacing(1.6) spacing(1);
+                  &.active {
+                    padding-bottom: spacing(1.6);
+                  }
+                }
+                .nav-link--btn2 {
+                  padding: spacing(0.3) spacing(2);
+                  &.active {
+                    padding-bottom: spacing(-0.1);
+                  }
+                }
+              }
+            }
+            #myTabContent {
+              .myCourseCarousel {
+                .owl-nav {
+                  &.disabled {
+                    display: block;
+                  }
+                  .owl-prev {
+                    left: -4%;
+                  }
+                  .owl-next {
+                    right: -4%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1199px) {
+  .courses {
+    .courses__container {
+      padding: 0 spacing(3);
+      .row {
+        margin: 0 auto;
+        .courses__left {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width: 25%;
+        }
+        .courses__right {
+          max-width: 75%;
+          .right__content {
+            #myTab {
+              flex-wrap: nowrap;
+              white-space: normal;
+              border-bottom: none;
+              .nav-item {
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #dee2e6;
+                .nav-link {
+                  text-align: left;
+                  background-color: #fff;
+                  color: $color-black-0;
+                  border: none;
+                  padding: spacing(0.4) spacing(0.8);
+                  &.active {
+                    border-bottom: 6px solid $color-blue;
+                  }
+                  &:focus {
+                    outline: none;
+                  }
+                }
+                .nav-link--btn {
+                  padding: spacing(1.6) spacing(2);
+                  &.active {
+                    padding-bottom: spacing(1.6);
+                  }
+                }
+                .nav-link--btn2 {
+                  &.active {
+                    padding-bottom: spacing(-0.1);
+                  }
+                }
+              }
+            }
+            #myTabContent {
+              .myCourseCarousel {
+                .owl-nav {
+                  &.disabled {
+                    display: block;
+                  }
+                  .owl-prev {
+                    left: -4%;
+                  }
+                  .owl-next {
+                    right: -4%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

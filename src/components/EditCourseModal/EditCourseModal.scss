@@ -1,0 +1,101 @@
+@import "../connect";
+
+.editCourseModal {
+  z-index: 8888;
+  .modal-dialog {
+    max-width: 50%;
+    .modal-content {
+      margin: 0;
+      .modal-body {
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 0;
+        .formUser {
+          display: grid;
+          grid-gap: 10px;
+          margin: auto 0;
+          padding: 20px;
+          width: 30%;
+          background-color: rgba(255, 255, 255, 0.4);
+          border-radius: 10px;
+          box-shadow: 0px 5px 64px rgba(0, 0, 0, 0.2);
+          &.form-add-user {
+            width: 100%;
+          }
+          .form-title {
+            margin-bottom: 5px;
+            text-align: center;
+            text-shadow: 0 4px 16px #fff;
+            font-size: 30px;
+            font-weight: 100;
+          }
+          fieldset {
+            margin: 0;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            legend {
+              padding: 5px;
+              background-color: #fff;
+              border-radius: 5px;
+            }
+            .control-form-list {
+              margin: 0;
+              padding: 0;
+              .control-form-item {
+                display: grid;
+                align-items: center;
+                margin: 10px;
+                label {
+                  text-align: left;
+                  padding-bottom: 2px;
+                }
+                input {
+                  padding: 5px;
+                  border: 1px solid #ddd;
+                  border-radius: 5px;
+                  &:hover {
+                    border: 1px solid $color-red-0;
+                  }
+                }
+                textarea {
+                  padding: 5px;
+                  border: 1px solid #ddd;
+                  border-radius: 5px;
+                  &:hover {
+                    border: 1px solid $color-red-0;
+                  }
+                }
+                select {
+                  padding: 5px;
+                  border: 1px solid #ddd;
+                  border-radius: 5px;
+                  &:hover {
+                    border: 1px solid $color-red-0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .modal-footer {
+        button {
+          padding: 10px;
+          border: 1px solid rgba(0, 0, 0, 0);
+          border-radius: 5px;
+          background: $color-blue;
+          color: $color-white-0;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+          &:hover {
+            background: none;
+            color: $color-black-0;
+            border: 1px solid $color-blue;
+          }
+        }
+      }
+    }
+  }
+}
